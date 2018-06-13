@@ -14,12 +14,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="springboot" target="1.6" />
-      <module name="springboot-api" target="1.6" />
-      <module name="springboot-api-impl" target="1.6" />
-      <module name="springboot-core" target="1.6" />
-      <module name="springboot-erp" target="1.6" />
-      <module name="springboot-rest" target="1.6" />
+      <module name="springboot" target="1.8" />
+      <module name="springboot-api" target="1.8" />
+      <module name="springboot-api-impl" target="1.8" />
+      <module name="springboot-core" target="1.8" />
+      <module name="springboot-erp" target="1.8" />
+      <module name="springboot-rest" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

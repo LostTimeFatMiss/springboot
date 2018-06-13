@@ -39,3 +39,15 @@ libraries
 /.idea/libraries
 /.idea/libraries
 /.idea/libraries
+*.xml
+/.idea/libraries
+/.idea/libraries
+/.idea/libraries/*.xml
+/.idea
+/*.iml
+/springboot-rest/.mvn
+/springboot-api-impl/*.iml
+/springboot-core/target/classes/com/sym/springboot/service/*.class
+/springboot-core/target/classes/com/sym/springboot/domain/*.class
+target
+/springboot-core/target/classes

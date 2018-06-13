@@ -26,3 +26,9 @@ hs_err_pid*
 /springboot-rest/.mvn/wrapper/maven-wrapper.jar
 /springboot-rest/.mvn/wrapper/maven-wrapper.jar
 /springboot-rest/.mvn/wrapper/maven-wrapper.properties
+/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_1_5_9_RELEASE.xml
+/.idea/libraries/Maven__org_springframework_security_spring_security_config_4_2_3_RELEASE.xml
+/.idea/libraries/Maven__org_springframework_security_spring_security_core_4_2_3_RELEASE.xml
+/.idea/libraries/Maven__org_springframework_security_spring_security_web_4_2_3_RELEASE.xml
+/springboot-core/*.iml
+/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security____.xml

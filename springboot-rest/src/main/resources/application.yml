@@ -1,4 +1,16 @@
-security:
-  user:
-    name: admin
-    password: admin
+spring:
+  security:
+    user:
+      name: admin
+      password: admin
+  thymeleaf:
+    cache: false
+  application:
+    name: springboot-rest
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:30000/eureka/
+server:
+  port: 30002
+

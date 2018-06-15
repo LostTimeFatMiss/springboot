@@ -1,7 +1,17 @@
 spring:
-  security:
-    user:
-      name: admin
-      password: admin
   thymeleaf:
     cache: false
+  application:
+    name: springboot-erp
+eureka:
+  client:
+    service-url: #注册中心地址
+      defaultZone: http://localhost:30000/eureka/
+server:
+  port: 30001
+
+security:  #给权限设置默认账号密码
+  user:
+    name: admin
+    password: admin
+

@@ -18,5 +18,9 @@ security:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
-
+logging:
+  level:
+    root: debug
+    org.springframework.web: DEBUG
+    org.hibernate: ERROR
 

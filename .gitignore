@@ -101,3 +101,4 @@ crashlytics-build.properties
 target
 *.mymetadata
 META-INF/
+/.idea/*.xml

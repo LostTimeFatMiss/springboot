@@ -6,6 +6,7 @@ import com.sym.springboot.domain.Order;
 import com.sym.springboot.domain.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * @date: 2018/6/12
  */
 @Service
+@Transactional(readOnly = true,rollbackFor = Exception.class)
 public class OrderService {
 
     @Autowired

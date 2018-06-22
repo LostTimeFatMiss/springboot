@@ -8,7 +8,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
+
+import static org.apache.ibatis.ognl.DynamicSubscript.all;
 
 /**
  * @author: Song Yimin
@@ -38,5 +41,19 @@ public class RestController {
 
         /*return map.get("mobile").toString()+map1.get("name").toString();*/
         return JSON.toJSON(order);
+    }
+
+
+    @GetMapping("/all")
+    public Object findAll(){
+        List<Order> all = orderService.findAll();
+        return all;
+    }
+
+    @GetMapping("/findOrderById")
+    public Object findOrderById(){
+
+        Order order = orderService.findOrderById();
+        return order;
     }
 }

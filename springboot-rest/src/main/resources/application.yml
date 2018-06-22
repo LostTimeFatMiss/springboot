@@ -1,8 +1,4 @@
 spring:
-  security:
-    user:
-      name: admin
-      password: admin
   thymeleaf:
     cache: false
   application:
@@ -13,4 +9,14 @@ eureka:
       defaultZone: http://localhost:30000/eureka/
 server:
   port: 30002
+
+security:
+  user:
+    name: admin
+    password: admin
+---
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
 

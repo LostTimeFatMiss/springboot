@@ -1,9 +1,13 @@
 package com.sym.springboot.service;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.sym.springboot.domain.Order;
 import com.sym.springboot.domain.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author: Song Yimin
@@ -18,6 +22,18 @@ public class OrderService {
 
     public Order get(){
         Order order = orderRepository.get(1);
+        return order;
+    }
+
+    public List<Order> findAll(){
+        //分页
+        Page<Order> page = PageHelper.startPage(2, 5);
+        List<Order> orders = orderRepository.finAll();
+        return orders;
+    }
+
+    public Order findOrderById(){
+        Order order = orderRepository.findOrderById(1);
         return order;
     }
 }

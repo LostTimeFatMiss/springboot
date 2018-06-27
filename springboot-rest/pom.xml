@@ -23,6 +23,11 @@
             <artifactId>springboot-core</artifactId>
             <version>${version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.sym</groupId>
+            <artifactId>springboot-api-impl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 	</dependencies>
 
 	<build>

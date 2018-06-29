@@ -1,11 +1,15 @@
 package com.sym.springboot.rest.controller;
 
+import com.alibaba.druid.sql.visitor.functions.Substring;
 import com.alibaba.fastjson.JSON;
 import com.sym.springboot.domain.Order;
 import com.sym.springboot.service.OrderService;
+import com.sym.springboot.utils.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
+import redis.clients.jedis.JedisPool;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -22,6 +26,7 @@ import static org.apache.ibatis.ognl.DynamicSubscript.all;
 @RequestMapping("test")
 public class RestController {
 
+
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -32,7 +37,7 @@ public class RestController {
     private JdbcTemplate renrenjdbc;
 
     @GetMapping("/a")
-    public Object a(){
+    public Object a() {
         String sql = "SELECT mobile FROM `order` WHERE id = 1";
         String sql1 = " SELECT NAME FROM sys_menu WHERE  menu_id = 1 ";
         Map<String, Object> map = jdbcTemplate.queryForMap(sql);
@@ -45,15 +50,21 @@ public class RestController {
 
 
     @GetMapping("/all")
-    public Object findAll(){
+    public Object findAll() {
         List<Order> all = orderService.findAll();
         return all;
     }
 
     @GetMapping("/findOrderById")
-    public Object findOrderById(){
+    public Object findOrderById() {
 
         Order order = orderService.findOrderById();
         return order;
+    }
+
+    @GetMapping("redis")
+    public Object redis() {
+        RedisUtil.set("a", 4);
+        return RedisUtil.get("a");
     }
 }

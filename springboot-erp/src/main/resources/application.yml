@@ -3,6 +3,10 @@ spring:
     cache: false
   application:
     name: springboot-erp
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 0
 eureka:
   client:
     service-url: #注册中心地址

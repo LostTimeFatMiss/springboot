@@ -20,4 +20,8 @@ public class SysUserServie {
     public SysUser get(){
         return sysUserResposity.get(1L);
     }
+
+    public SysUser getUser(String username){
+        return sysUserResposity.getUser(username);
+    }
 }

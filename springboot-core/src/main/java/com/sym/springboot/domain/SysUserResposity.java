@@ -1,8 +1,6 @@
 package com.sym.springboot.domain;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 /**
  * @author: Song Yimin
@@ -13,4 +11,11 @@ import org.apache.ibatis.annotations.Select;
 public interface SysUserResposity {
     @Select(" select * from sys_user where id = #{id}")
     SysUser get(@Param("id") Long id);
+
+    @Select(" select * from sys_user where username = #{username}")
+    SysUser getUser(@Param("username") String username);
+
+    @Insert(" insert into  sys_user ")
+    @Options
+    SysUser register(@Param("username") String username);
 }

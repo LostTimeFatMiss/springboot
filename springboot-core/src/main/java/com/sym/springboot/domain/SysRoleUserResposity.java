@@ -1,6 +1,11 @@
 package com.sym.springboot.domain;
 
+import com.sym.springboot.provider.PermissionProvider;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.SelectProvider;
+
+import java.util.List;
 
 /**
  * @author: Song Yimin
@@ -9,4 +14,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface SysRoleUserResposity {
+
 }

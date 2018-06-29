@@ -28,6 +28,6 @@ public class OrderController {
     @RequestMapping(value = "/order",method = RequestMethod.GET)
     public String get(Model model){
         model.addAttribute("order",orderService.get());
-        return "index";
+        return "success";
     }
 }

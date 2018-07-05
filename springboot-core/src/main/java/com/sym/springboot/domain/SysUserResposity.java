@@ -15,7 +15,7 @@ public interface SysUserResposity {
     @Select(" select * from sys_user where username = #{username}")
     SysUser getUser(@Param("username") String username);
 
-    @Insert(" insert into  sys_user ")
-    @Options
-    SysUser register(@Param("username") String username);
+    @Insert(" INSERT INTO springboot.sys_user ( username, PASSWORD, salt, enabled) VALUES(#{username}, #{password}, #{salt}, #{enabled})")
+    @Options(useGeneratedKeys = true,keyColumn = "id")
+    void register(SysUser sysUser);
 }

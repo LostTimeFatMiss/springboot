@@ -35,6 +35,7 @@ public class MyShiroRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         String username = (String) authenticationToken.getPrincipal();
         SysUser user = sysUserServie.getUser(username);
+        String salt = user.getSalt();
         if (user==null) {
             throw new UnknownAccountException();
         }
@@ -44,7 +45,7 @@ public class MyShiroRealm extends AuthorizingRealm {
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
                 user,
                 user.getPassword(),
-                ByteSource.Util.bytes(username),
+                ByteSource.Util.bytes(salt),
                 getName()  //realm name
         );
         // 当验证都通过后，把用户信息放在session里

@@ -12,16 +12,22 @@ import org.springframework.transaction.annotation.Transactional;
  * @date: 2018/6/22
  */
 @Service
-@Transactional(readOnly = true,rollbackFor = Exception.class)
+@Transactional(readOnly = true, rollbackFor = Exception.class)
 public class SysUserServie {
     @Autowired
     private SysUserResposity sysUserResposity;
 
-    public SysUser get(){
+    public SysUser get() {
         return sysUserResposity.get(1L);
     }
 
-    public SysUser getUser(String username){
+    public SysUser getUser(String username) {
         return sysUserResposity.getUser(username);
+    }
+
+    @Transactional(readOnly = false,rollbackFor = Exception.class)
+    public Integer register(SysUser sysUser) {
+        sysUserResposity.register(sysUser);
+        return sysUser.getId();
     }
 }

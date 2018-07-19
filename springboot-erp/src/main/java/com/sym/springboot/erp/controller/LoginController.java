@@ -67,5 +67,4 @@ public class LoginController {
         System.out.println(id);
         return "success";
     }
-
 }

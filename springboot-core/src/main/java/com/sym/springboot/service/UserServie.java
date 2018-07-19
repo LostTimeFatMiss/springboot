@@ -1,7 +1,7 @@
 package com.sym.springboot.service;
 
-import com.sym.springboot.domain.SysUser;
-import com.sym.springboot.domain.SysUserResposity;
+import com.sym.springboot.domain.entity.User;
+import com.sym.springboot.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,21 +13,21 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Transactional(readOnly = true, rollbackFor = Exception.class)
-public class SysUserServie {
+public class UserServie {
     @Autowired
-    private SysUserResposity sysUserResposity;
+    private UserRepository userRepository;
 
-    public SysUser get() {
-        return sysUserResposity.get(1L);
+    public User get() {
+        return userRepository.get(1L);
     }
 
-    public SysUser getUser(String username) {
-        return sysUserResposity.getUser(username);
+    public User getUser(String username) {
+        return userRepository.getUser(username);
     }
 
     @Transactional(readOnly = false,rollbackFor = Exception.class)
-    public Integer register(SysUser sysUser) {
-        sysUserResposity.register(sysUser);
-        return sysUser.getId();
+    public Long register(User user) {
+        userRepository.register(user);
+        return user.getId();
     }
 }

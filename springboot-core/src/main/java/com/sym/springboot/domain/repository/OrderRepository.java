@@ -1,6 +1,6 @@
-package com.sym.springboot.domain;
+package com.sym.springboot.domain.repository;
 
-import com.sun.tools.corba.se.idl.constExpr.Or;
+import com.sym.springboot.domain.entity.Order;
 import com.sym.springboot.provider.OrderProvider;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

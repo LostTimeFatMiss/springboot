@@ -1,6 +1,6 @@
 package com.sym.springboot.provider;
 
-import com.sym.springboot.domain.SysUser;
+import com.sym.springboot.domain.entity.User;
 import org.apache.ibatis.jdbc.SQL;
 
 /**
@@ -9,15 +9,15 @@ import org.apache.ibatis.jdbc.SQL;
  * @date: 2018/6/29
  */
 public class PermissionProvider {
-    public String getResource(int id){
+    public String getResource(final User user){
         return new SQL(){
             {
-                SELECT("p.url");
-                FROM("sys_user u ");
-                INNER_JOIN("sys_role_user ru ON ru.sys_user_id = u.id ");
-                INNER_JOIN("sys_permission_role spr ON spr.role_id = ru.sys_role_id ");
-                INNER_JOIN("sys_permission p ON p.id = spr.permission_id");
-                WHERE("id=#{id}");
+                SELECT(" re.`code`,re.url ");
+                FROM(" sys_user u ");
+                INNER_JOIN("sys_user_role ur on u.id = ur.sys_user_id ");
+                INNER_JOIN("sys_role_resource srr on ur.sys_role_id = srr.sys_role_id ");
+                INNER_JOIN("sys_resource re on re.id = srr.sys_resource_id");
+                WHERE("u.id=#{id}");
             }
         }.toString();
     }

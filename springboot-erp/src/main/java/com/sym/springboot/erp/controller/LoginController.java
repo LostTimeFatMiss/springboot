@@ -1,7 +1,7 @@
 package com.sym.springboot.erp.controller;
 
-import com.sym.springboot.domain.SysUser;
-import com.sym.springboot.service.SysUserServie;
+import com.sym.springboot.domain.entity.User;
+import com.sym.springboot.service.UserServie;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -28,7 +28,7 @@ import java.util.UUID;
 public class LoginController {
 
     @Autowired
-    private SysUserServie sysUserServie;
+    private UserServie sysUserServie;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(HttpServletRequest request, String username, String password, Model model) {
@@ -58,13 +58,18 @@ public class LoginController {
         String uuid = UUID.randomUUID().toString().replace("-", "").toLowerCase();
         String newPassword = new SimpleHash("MD5", ByteSource.Util.bytes(password), uuid, 2).toHex();
         System.out.println(newPassword + "----------------------------");
-        SysUser sysUser = new SysUser();
-        sysUser.setEnabled(true);
-        sysUser.setPassword(newPassword);
-        sysUser.setSalt(uuid);
-        sysUser.setUsername(username);
-        Integer id = sysUserServie.register(sysUser);
+        User user = new User();
+        user.setStatus(1);
+        user.setPassword(newPassword);
+        user.setSalt(uuid);
+        user.setUsername(username);
+        Long id = sysUserServie.register(user);
+        //注册后直接登录
+        UsernamePasswordToken token = new UsernamePasswordToken();
+        token.setUsername(user.getUsername());
+        token.setPassword(password.toCharArray());
+        SecurityUtils.getSubject().login(token);
         System.out.println(id);
-        return "success";
+        return "redirect:/";
     }
 }

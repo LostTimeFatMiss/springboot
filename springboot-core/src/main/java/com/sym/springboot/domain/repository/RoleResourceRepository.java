@@ -1,4 +1,4 @@
-package com.sym.springboot.domain;
+package com.sym.springboot.domain.repository;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -8,5 +8,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @date: 2018/6/22
  */
 @Mapper
-public interface SysPermissionRoleResposity {
+public interface RoleResourceRepository {
 }

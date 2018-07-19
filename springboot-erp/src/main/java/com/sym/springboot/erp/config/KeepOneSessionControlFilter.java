@@ -1,22 +1,14 @@
 package com.sym.springboot.erp.config;
 
 import com.alibaba.fastjson.JSON;
-import com.sym.springboot.domain.SysUser;
-import org.apache.shiro.session.Session;
-import org.apache.shiro.session.mgt.DefaultSessionKey;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.AccessControlFilter;
-import org.apache.shiro.web.util.WebUtils;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.Serializable;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
 
 /**

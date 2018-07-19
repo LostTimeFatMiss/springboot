@@ -1,4 +1,4 @@
-package com.sym.springboot.domain;
+package com.sym.springboot.domain.entity;
 
 import java.util.Date;
 

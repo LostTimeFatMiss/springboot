@@ -2,8 +2,8 @@ package com.sym.springboot.service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.sym.springboot.domain.Order;
-import com.sym.springboot.domain.OrderRepository;
+import com.sym.springboot.domain.entity.Order;
+import com.sym.springboot.domain.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,7 +29,7 @@ public class OrderService {
 
     public List<Order> findAll(){
         //分页
-        Page<Order> page = PageHelper.startPage(2, 5);
+        Page<Order> page = PageHelper.startPage(0, 5);
         List<Order> orders = orderRepository.finAll();
         return orders;
     }

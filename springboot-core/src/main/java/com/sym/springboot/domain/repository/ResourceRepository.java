@@ -1,5 +1,7 @@
-package com.sym.springboot.domain;
+package com.sym.springboot.domain.repository;
 
+import com.sym.springboot.domain.entity.Resource;
+import com.sym.springboot.domain.entity.User;
 import com.sym.springboot.provider.PermissionProvider;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -13,7 +15,7 @@ import java.util.List;
  * @date: 2018/6/22
  */
 @Mapper
-public interface SysPermissionResposity {
+public interface ResourceRepository {
     @SelectProvider(type = PermissionProvider.class,method = "getResource")
-    public List<String> getResource(@Param("id") int id);
+    List<Resource> getResource(User user);
 }

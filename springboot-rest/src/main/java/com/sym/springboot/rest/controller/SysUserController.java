@@ -1,7 +1,7 @@
 package com.sym.springboot.rest.controller;
 
-import com.sym.springboot.domain.SysUser;
-import com.sym.springboot.service.SysUserServie;
+import com.sym.springboot.domain.entity.User;
+import com.sym.springboot.service.UserServie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,11 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class SysUserController {
 
     @Autowired
-    private SysUserServie sysUserServie;
+    private UserServie userServie;
 
     @GetMapping("get")
-    public SysUser get(){
-        return sysUserServie.get();
+    public User get(){
+        return userServie.get();
     }
 
 }

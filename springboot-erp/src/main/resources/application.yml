@@ -7,6 +7,25 @@ spring:
     host: localhost
     port: 6379
     timeout: 0
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      acks: all
+      retries: 0
+      batch-size: 16384
+
+
+    consumer:
+    # 指定一个默认的组名
+      group-id: test-consumer-group
+      # earliest:当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，从头开始消费
+      # latest:当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，消费新产生的该分区下的数据
+      # none:topic各分区都存在已提交的offset时，从offset后开始消费；只要有一个分区不存在已提交的offset，则抛出异常
+      enable-auto-commit: true
+      auto-commit-interval: 30000
+      max-poll-records: 10
+      auto-offset-reset: earliest
+
 eureka:
   client:
     service-url: #注册中心地址
@@ -18,4 +37,3 @@ security:  #给权限设置默认账号密码
   user:
     name: admin
     password: admin
-

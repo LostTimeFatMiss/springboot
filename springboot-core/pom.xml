@@ -102,12 +102,22 @@
             <scope>provided</scope>
         </dependency>
 
+        <!--kafka-->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+
+
 
         <!-- springboot工具 修改代码后不需重启即生效 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>springloaded</artifactId>
         </dependency>
+
+
+
     </dependencies>
 
 </project>

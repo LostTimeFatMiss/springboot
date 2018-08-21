@@ -42,7 +42,7 @@ public class DataSourceConfig {
     /*注释掉是因为下面给变成了jdbctemp,用不到这个作为bean*/
     public DataSource dataSource1(){
         DruidDataSource druidDataSource = new DruidDataSource();
-        druidDataSource.setUrl("jdbc:mysql://localhost:3306/renren");
+        druidDataSource.setUrl("jdbc:mysql://localhost:3306/shiro");
         druidDataSource.setUsername("root");
         druidDataSource.setPassword("root");
         druidDataSource.setInitialSize(2);

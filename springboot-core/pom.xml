@@ -108,7 +108,24 @@
             <artifactId>spring-kafka</artifactId>
         </dependency>
 
+        <!--ES-->
 
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.bbossgroups.plugins</groupId>
+            <artifactId>bboss-elasticsearch-rest-jdbc</artifactId>
+            <version>5.1.3</version>
+        </dependency>
 
         <!-- springboot工具 修改代码后不需重启即生效 -->
         <dependency>

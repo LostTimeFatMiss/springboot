@@ -3,6 +3,8 @@ spring:
     cache: false
   application:
     name: springboot-rest
+
+
 eureka:
   client:
     service-url:
@@ -23,4 +25,21 @@ logging:
     root: debug
     org.springframework.web: DEBUG
     org.hibernate: ERROR
+---
+elasticsearch:
+  ip:
+  pool: 5
+  cluster:
+    name: ep-es-cluster
+  host: 10.250.112.250
+  port: 9200
+  schema: http
+  connect_time_out: 1000
+  socket_time_out: 3000
+  connection_request_time_out: 500
+  max_connect_num: 100
+  max_connect_per_route: 100
+  uniqueConnectTimeConfig : false
+  uniqueConnectNumConfig: true
+
 
